@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0B0F19; /* Azul escuro original */
+  --panel: #151D30;      /* Painel original */
+  --border: #23304E;      /* Borda original */
+  --text-main: #E2E8F0;
+  --text-muted: #64748B;
+}
+
+@layer base {
+  body {
+    @apply bg-background font-sans antialiased overflow-hidden select-none transition-colors duration-300;
+    color: var(--text-main);
+  }
+  
+  /* Scrollbar customizada e moderna */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-slate-700 transition-colors;
+  }
+}
+
+/* Utilitários premium */
+.glass {
+  background: rgba(21, 29, 48, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+/* =========================================================================
+   Sistema de Tema Claro (Branco & Preto) - Overrides inteligentes
+   ========================================================================= */
+:root:not(.dark) {
+  --background: #F3F4F6; /* Cinza claro suave */
+  --panel: #FFFFFF;      /* Branco puro para painéis */
+  --border: #E5E7EB;      /* Cinza claro para bordas */
+  --text-main: #1F2937;  /* Cinza escuro para texto */
+  --text-muted: #4B5563; /* Cinza médio */
+
+  /* Forçar transições em elementos chave */
+  .bg-panel, .glass, aside, main, header, div, button, select, p, span, h1, h2, h3, h4 {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Sobrescrever cores de texto slate e white */
+  .text-slate-200, .text-slate-100, .text-slate-300, .text-slate-50, .text-slate-400 {
+    color: #1F2937 !important;
+  }
+  .text-slate-400 {
+    color: #4B5563 !important;
+  }
+  .text-muted {
+    color: #6B7280 !important;
+  }
+  .text-white {
+    color: #111827 !important;
+  }
+  
+  /* Garantir que textos e ícones em botões coloridos e badges brilhantes permaneçam brancos para contraste premium */
+  button.bg-gradient-to-r, 
+  button.bg-primary, 
+  button.bg-secondary, 
+  button.bg-accent, 
+  a.bg-gradient-to-r,
+  .bg-gradient-to-r,
+  .bg-gradient-to-tr,
+  .bg-gradient-to-r *,
+  .bg-gradient-to-tr *,
+  .keep-white {
+    color: #FFFFFF !important;
+  }
+  
+  /* Ajustar cores de fundos específicos da UI */
+  aside, .bg-panel, header {
+    background-color: #FFFFFF !important;
+    border-color: #E5E7EB !important;
+  }
+  
+  header {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border-color: #E5E7EB !important;
+  }
+
+  /* Botão inativo da barra lateral */
+  .text-slate-400.hover\:text-white:hover {
+    color: #111827 !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Ajustar a área de exibição principal */
+  main {
+    background-color: #F9FAFB !important;
+  }
+
+  /* Ajustar a caixa do console de logs */
+  .bg-black {
+    background-color: #1E293B !important;
+    border-color: #E2E8F0 !important;
+    pre {
+      color: #10B981 !important;
+    }
+  }
+
+  /* Ajustar o box do glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Inputs, selects e dropdowns */
+  select, input {
+    background-color: #FFFFFF !important;
+    border-color: #D1D5DB !important;
+    color: #111827 !important;
+  }
+
+  /* Cards de planos de energia e outros fundos escuros */
+  .bg-\[\#161F33\] {
+    background-color: #F3F4F6 !important;
+    border-color: #E5E7EB !important;
+  }
+}
