@@ -25,38 +25,19 @@ O Own Optimizer adota uma postura de segurança **Zero Trust** entre a interface
 
 ---
 
-## 🛠️ Instalação e Desenvolvimento
+## 🛠️ Instalação e Uso
 
 ### Pré-requisitos
-- Node.js (v20 ou superior recomendado)
-- Sistema Operacional: **Windows**
-- Uma chave válida configurada no `.env` para o Supabase (`VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`).
+- Sistema Operacional: **Windows 10 ou 11**
+- Uma **Chave de Licença Válida** (fornecida pelo administrador) para ativar o software.
 
-### Passo a Passo
+### Como Baixar e Instalar
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/corollapng/own-optimizer.git
-   cd own-optimizer
-   ```
-
-2. **Instale as dependências:**
-   ```bash
-   npm install
-   ```
-
-3. **Inicie o Servidor de Desenvolvimento:**
-   > **⚠️ IMPORTANTE:** Você deve abrir o seu terminal (CMD, PowerShell ou terminal do VS Code) **como Administrador** para que o aplicativo funcione!
-   ```bash
-   npm run dev
-   ```
-
-4. **Compilar (Build) para Produção:**
-   Para gerar o instalador final `.exe` para os clientes:
-   ```bash
-   npm run package
-   ```
-   O instalador (NSIS) será gerado dentro da pasta `dist-app`.
+1. Acesse a aba de [Releases do repositório](https://github.com/corollapng/own-optimizer/releases).
+2. Baixe o instalador executável da versão mais recente (ex: `Own Optimizer Setup 1.0.0.exe`).
+3. Execute o arquivo baixado para instalar o aplicativo no seu computador.
+4. **⚠️ IMPORTANTE:** Como o Own Optimizer atua profundamente no sistema, clique com o botão direito no ícone do aplicativo após a instalação e selecione **"Executar como Administrador"**.
+5. Na tela inicial do aplicativo, insira a sua **Chave de Licença** para ativar e liberar todas as ferramentas de otimização.
 
 ---
 
